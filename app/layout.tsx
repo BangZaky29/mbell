@@ -21,8 +21,8 @@ export const metadata: Metadata = {
       { url: "/assets/logoBrand.png", sizes: "64x64", type: "image/png" },
     ],
     icon: [
-      { url: "/assets/logoBrand.png", sizes: "32x32", type: "image/png" },
-      { url: "/assets/logoBrand.png", sizes: "64x64", type: "image/png" },
+      { url: "/assets/logoBrand.png", sizes: "42x42", type: "image/png" },
+      { url: "/assets/logoBrand.png", sizes: "84x84", type: "image/png" },
     ],
     apple: [
       { url: "/assets/logoBrand.png", sizes: "180x180" },
