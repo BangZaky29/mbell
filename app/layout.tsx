@@ -1,6 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
-// <CHANGE> Updated fonts to elegant serif and sans-serif for MBELLA brand
+import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
@@ -9,25 +8,26 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  // <CHANGE> Updated metadata for MBELLA makeup artist website
   title: "MBELLA - Professional Makeup Artist | Bella Aprillian",
   description:
     "Professional makeup artist specializing in bridal, party, and special event makeup. Book your appointment with Bella Aprillian today.",
   generator: "v0.app",
   keywords: ["makeup artist", "bridal makeup", "party makeup", "Bella Aprillian", "MBELLA", "professional makeup"],
   icons: {
-    shortcut: [
-      { url: "/assets/logoBrand.png", sizes: "32x32", type: "image/png" },
-      { url: "/assets/logoBrand.png", sizes: "64x64", type: "image/png" },
-    ],
+    // Gunakan logo yang sudah ada
     icon: [
-      { url: "/assets/logoBrand.png", sizes: "42x42", type: "image/png" },
-      { url: "/assets/logoBrand.png", sizes: "84x84", type: "image/png" },
+      { url: "/assets/logoBrand.png", sizes: "any" },
     ],
+    shortcut: ["/assets/logoBrand.png"],
     apple: [
       { url: "/assets/logoBrand.png", sizes: "180x180" },
     ],
   },
+  manifest: "/site.webmanifest",
+}
+
+// Pindahkan themeColor ke viewport export (Next.js 14+)
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#1f1f1f" },

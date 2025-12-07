@@ -32,7 +32,7 @@ export default function Header({ scrollToSection }) {
               src="/assets/logoBrand.png"
               alt="MBELLA"
               width={160}
-              height={80}
+              height={160}
               className="logo-image"
               priority
             />

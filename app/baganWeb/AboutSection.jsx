@@ -19,7 +19,7 @@ export default function AboutSection() {
           <div className="about-content">
             <h2 className="about-title">About Bella</h2>
             <p className="about-text">
-              Welcome to MBELLA! I'm Bella Aprillian, a passionate makeup artist dedicated to enhancing your natural
+              Welcome to MBELL! I'm Bella Aprillian, a passionate makeup artist dedicated to enhancing your natural
               beauty and making you feel confident for every special moment in your life.
             </p>
             <p className="about-text">
@@ -35,7 +35,7 @@ export default function AboutSection() {
               <a href="https://www.instagram.com/mbell.makeup/" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg">
                   <Instagram className="w-5 h-5 mr-2" />
-                  Follow MBELLA
+                  Follow mbell.makeup
                 </Button>
               </a>
             </div>

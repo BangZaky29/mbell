@@ -1,0 +1,23 @@
+{
+  "name": "MBELLA - Bella Aprillian",
+  "short_name": "MBELLA",
+  "description": "Professional Makeup Artist",
+  "icons": [
+    {
+      "src": "/assets/logoBrand.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logoBrand.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
