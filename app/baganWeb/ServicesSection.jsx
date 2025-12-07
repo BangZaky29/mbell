@@ -5,13 +5,38 @@ import "@/css/ServicesSection.css"
 
 export default function ServicesSection() {
   const services = [
-    { title: "Bridal Makeup", desc: "Make your wedding day unforgettable with stunning bridal makeup", icon: "👰" },
-    { title: "Party Makeup", desc: "Glamorous looks for special occasions and celebrations", icon: "🎉" },
-    { title: "Graduation Makeup", desc: "Fresh and elegant makeup for your big achievement day", icon: "🎓" },
-    { title: "Photoshoot Makeup", desc: "Professional makeup that looks perfect on camera", icon: "📸" },
-    { title: "Special Events", desc: "Custom makeup for any special moment in your life", icon: "✨" },
-    { title: "Makeup Class", desc: "Learn professional makeup techniques and tips", icon: "💄" },
-  ]
+  { 
+    title: "Makeup Pengantin", 
+    desc: "Buat hari pernikahanmu tak terlupakan dengan makeup pengantin yang memukau", 
+    icon: "👰" 
+  },
+  { 
+    title: "Makeup Pesta", 
+    desc: "Tampilan glamor untuk acara spesial dan perayaan", 
+    icon: "🎉" 
+  },
+  { 
+    title: "Makeup Wisuda", 
+    desc: "Makeup segar dan elegan untuk hari pencapaian besarmu", 
+    icon: "🎓" 
+  },
+  { 
+    title: "Makeup Photoshoot", 
+    desc: "Makeup profesional yang terlihat sempurna di kamera", 
+    icon: "📸" 
+  },
+  { 
+    title: "Acara Spesial", 
+    desc: "Makeup khusus untuk momen spesial dalam hidupmu", 
+    icon: "✨" 
+  },
+  { 
+    title: "Kelas Makeup", 
+    desc: "Pelajari teknik dan tips makeup profesional", 
+    icon: "💄" 
+  },
+]
+
 
   return (
     <section id="services" className="services-section">

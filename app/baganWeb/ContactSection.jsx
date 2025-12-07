@@ -20,12 +20,12 @@ export default function ContactSection({ handleWhatsApp }) {
   })
 
   const serviceOptions = [
-    "Bridal Makeup",
-    "Party Makeup",
-    "Graduation Makeup",
-    "Photoshoot Makeup",
-    "Special Events",
-    "Makeup Class"
+    "Makeup Pengantin",
+    "Makeup Pesta",
+    "Makeup Wisuda",
+    "Makeup Photoshoot",
+    "Acara Spesial",
+    "Kelas Makeup"
   ]
 
   const handleInputChange = (e) => {
