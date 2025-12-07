@@ -9,6 +9,7 @@ export default function AboutSection() {
     <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-grid">
+          {/* Gambar profil Bella */}
           <div className="about-image-wrapper">
             <img
               src="/assets/photo_grid/bella_01.jpg"
@@ -16,26 +17,34 @@ export default function AboutSection() {
               className="about-image"
             />
           </div>
+
+          {/* Konten deskripsi tentang Bella */}
           <div className="about-content">
-            <h2 className="about-title">About Bella</h2>
+            <h2 className="about-title">About Me</h2>
             <p className="about-text">
-              Welcome to MBELL! I'm Bella Aprillian, a passionate makeup artist dedicated to enhancing your natural
-              beauty and making you feel confident for every special moment in your life.
+              Selamat datang di MBELL! Saya Bella Aprillian, seorang makeup artist yang berdedikasi untuk 
+              menonjolkan kecantikan alami Anda dan membuat Anda merasa percaya diri di setiap momen spesial dalam hidup Anda.
             </p>
             <p className="about-text">
-              With years of experience in bridal makeup, special events, and professional photoshoots, I specialize in
-              creating looks that are both timeless and modern. Every face tells a unique story, and I'm here to help
-              you shine on your most important days.
+              Dengan pengalaman bertahun-tahun dalam makeup pengantin, acara spesial, dan pemotretan profesional, 
+              saya mengkhususkan diri dalam menciptakan tampilan yang timeless sekaligus modern. Setiap wajah memiliki cerita unik, 
+              dan saya di sini untuk membuat Anda bersinar di hari-hari terpenting Anda.
             </p>
             <p className="about-text">
-              My approach combines professional techniques with a personal touch, ensuring that you not only look
-              beautiful but feel amazing too.
+              Pendekatan saya menggabungkan teknik profesional dengan sentuhan personal, 
+              memastikan Anda tidak hanya tampil cantik tetapi juga merasa luar biasa.
             </p>
+
+            {/* Tombol Instagram */}
             <div className="about-button-wrapper">
-              <a href="https://www.instagram.com/mbell.makeup/" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://www.instagram.com/mbell.makeup/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button variant="outline" size="lg">
                   <Instagram className="w-5 h-5 mr-2" />
-                  Follow mbell.makeup
+                  Follow @mbell.makeup
                 </Button>
               </a>
             </div>

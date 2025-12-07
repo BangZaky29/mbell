@@ -7,17 +7,17 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       name: "Sarah L.",
-      text: "Bella made me feel like a princess on my wedding day. Her attention to detail is amazing!",
+      text: "Bella membuat saya merasa seperti putri di hari pernikahan saya. Perhatiannya terhadap detail luar biasa!",
       rating: 5,
     },
     { 
       name: "Rina M.", 
-      text: "Professional, friendly, and incredibly talented. My makeup lasted all day!", 
+      text: "Profesional, ramah, dan sangat berbakat. Makeup saya bertahan sepanjang hari!", 
       rating: 5 
     },
     { 
       name: "Diana K.", 
-      text: "Best makeup artist in town! The results exceeded my expectations.", 
+      text: "Makeup artist terbaik di kota! Hasilnya melebihi ekspektasi saya.", 
       rating: 5 
     },
   ]
