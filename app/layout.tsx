@@ -8,11 +8,11 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "MBELLA - Professional Makeup Artist | Bella Aprillian",
+  title: "MBELL - Professional Makeup Artist | Bella Aprillian",
   description:
     "Professional makeup artist specializing in bridal, party, and special event makeup. Book your appointment with Bella Aprillian today.",
   generator: "v0.app",
-  keywords: ["makeup artist", "bridal makeup", "party makeup", "Bella Aprillian", "MBELLA", "professional makeup"],
+  keywords: ["makeup artist", "bridal makeup", "party makeup", "Bella Aprillian", "MBELL", "professional makeup"],
   icons: {
     // Gunakan logo yang sudah ada
     icon: [

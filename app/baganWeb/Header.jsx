@@ -30,7 +30,7 @@ export default function Header({ scrollToSection }) {
           <div className="header-logo">
             <Image
               src="/assets/logoBrand.png"
-              alt="MBELLA"
+              alt="MBELL"
               width={160}
               height={160}
               className="logo-image"

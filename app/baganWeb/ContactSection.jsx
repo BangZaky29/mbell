@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Mail, Instagram, Send, Phone } from "lucide-react"
+import { Mail, Instagram, Send, Phone, Calendar } from "lucide-react"
 import PropTypes from "prop-types"
 import "@/css/ContactSection.css"
 
@@ -15,6 +15,7 @@ export default function ContactSection({ handleWhatsApp }) {
     name: "",
     email: "",
     service: "",
+    reservationDate: "",
     message: ""
   })
 
@@ -42,14 +43,27 @@ export default function ContactSection({ handleWhatsApp }) {
     }))
   }
 
+  const formatDate = (dateString) => {
+    if (!dateString) return '-'
+    const date = new Date(dateString)
+    const options = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    }
+    return date.toLocaleDateString('id-ID', options)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    const waMessage = `*New Booking Request from MBELLA Website*
+    const waMessage = `*New Booking Request from MBELL Website*
 
 *Name:* ${formData.name || '-'}
 *Email:* ${formData.email || '-'}
 *Service Interested:* ${formData.service || '-'}
+*Reservation Date:* ${formatDate(formData.reservationDate)}
 
 *Message:*
 ${formData.message || '-'}`
@@ -61,8 +75,18 @@ ${formData.message || '-'}`
       name: "",
       email: "",
       service: "",
+      reservationDate: "",
       message: ""
     })
+  }
+
+  // Get today's date in YYYY-MM-DD format for min attribute
+  const getTodayDate = () => {
+    const today = new Date()
+    const year = today.getFullYear()
+    const month = String(today.getMonth() + 1).padStart(2, '0')
+    const day = String(today.getDate()).padStart(2, '0')
+    return `${year}-${month}-${day}`
   }
 
   return (
@@ -101,7 +125,7 @@ ${formData.message || '-'}`
               </div>
             </div>
 
-            {/* Ganti Input biasa menjadi Select */}
+            {/* Service Interested */}
             <div className="contact-form-field">
               <label className="contact-label">Service Interested</label>
               <Select
@@ -119,6 +143,22 @@ ${formData.message || '-'}`
                   ))}
                 </SelectContent>
               </Select>
+            </div>
+
+            {/* Reservation Date - NEW */}
+            <div className="contact-form-field">
+              <label className="contact-label">Reservation Date</label>
+              <div className="relative">
+                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                <Input 
+                  name="reservationDate"
+                  type="date"
+                  className="w-full pl-10"
+                  value={formData.reservationDate}
+                  onChange={handleInputChange}
+                  min={getTodayDate()}
+                />
+              </div>
             </div>
 
             <div className="contact-form-field">

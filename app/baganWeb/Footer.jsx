@@ -12,20 +12,20 @@ export default function Footer() {
           <Sparkles className="footer-sparkle" />
           <Image 
             src="/assets/logoBrand.png" 
-            alt="MBELLA"
+            alt="MBELL"
             width={520}
             height={260}
             className="footer-logo"
             priority
           />
-          <span className="sr-only">MBELLA</span>
+          <span className="sr-only">MBELL</span>
         </div>
 
         <p className="footer-text-main">
           Professional Makeup Artist • Bella Aprillian
         </p>
         <p className="footer-text-copyright">
-          © 2025 MBELLA. All rights reserved.
+          © 2025 MBELL. All rights reserved.
         </p>
       </div>
     </footer>
