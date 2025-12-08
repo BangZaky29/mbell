@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import "@/css/PortfolioSection.css"
 
 export default function PortfolioSection() {
-  const [activeFilter, setActiveFilter] = useState("all")
+  const [activeFilter, setActiveFilter] = useState("akad tanpa siger")
   const router = useRouter()
 
   const portfolioItems = [
@@ -68,8 +68,9 @@ export default function PortfolioSection() {
 ];
 
 
-  const filteredPortfolio =
-    activeFilter === "all" ? portfolioItems : portfolioItems.filter((item) => item.category === activeFilter)
+  const filteredPortfolio = portfolioItems.filter(
+    (item) => item.category === activeFilter
+  );
 
   return (
     <section id="portfolio" className="portfolio-section">
@@ -80,7 +81,6 @@ export default function PortfolioSection() {
 
           <div className="portfolio-filters">
             {[
-              "all",
               "akad tanpa siger",
               "akad",
               "natural",
