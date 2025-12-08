@@ -1,0 +1,73 @@
+{
+  "categories": {
+    "bridal": {
+      "name": "Bridal",
+      "description": "Wedding makeup and bridal looks",
+      "folder": "akadTanpaSiger",
+      "prefix": "akadTanpaSiger",
+      "photos": [
+        { "id": 1, "filename": "akadTanpaSiger_01.jpg", "alt": "Bridal makeup look 1" },
+        { "id": 2, "filename": "akadTanpaSiger_02.jpg", "alt": "Bridal makeup look 2" },
+        { "id": 3, "filename": "akadTanpaSiger_03.jpg", "alt": "Bridal makeup look 3" },
+        { "id": 4, "filename": "akadTanpaSiger_04.jpg", "alt": "Bridal makeup look 4" },
+        { "id": 5, "filename": "akadTanpaSiger_05.jpg", "alt": "Bridal makeup look 5" },
+        { "id": 6, "filename": "akadTanpaSiger_06.jpg", "alt": "Bridal makeup look 6" },
+        { "id": 7, "filename": "akadTanpaSiger_07.jpg", "alt": "Bridal makeup look 7" },
+        { "id": 8, "filename": "akadTanpaSiger_08.jpg", "alt": "Bridal makeup look 8" },
+        { "id": 9, "filename": "akadTanpaSiger_09.jpg", "alt": "Bridal makeup look 9" },
+        { "id": 10, "filename": "akadTanpaSiger_10.jpg", "alt": "Bridal makeup look 10" },
+        { "id": 11, "filename": "akadTanpaSiger_11.jpg", "alt": "Bridal makeup look 11" },
+        { "id": 12, "filename": "akadTanpaSiger_12.jpg", "alt": "Bridal makeup look 12" },
+        { "id": 13, "filename": "akadTanpaSiger_13.jpg", "alt": "Bridal makeup look 13" }
+      ]
+    },
+    "party": {
+      "name": "Party",
+      "description": "Party and event makeup",
+      "folder": "makeUP-akad",
+      "prefix": "akad",
+      "photos": [
+        { "id": 14, "filename": "akad_01.jpg", "alt": "Party makeup look 1" },
+        { "id": 15, "filename": "akad_02.jpg", "alt": "Party makeup look 2" },
+        { "id": 16, "filename": "akad_03.jpg", "alt": "Party makeup look 3" },
+        { "id": 17, "filename": "akad_04.jpg", "alt": "Party makeup look 4" },
+        { "id": 18, "filename": "akad_05.jpg", "alt": "Party makeup look 5" },
+        { "id": 19, "filename": "akad_06.jpg", "alt": "Party makeup look 6" },
+        { "id": 20, "filename": "akad_07.jpg", "alt": "Party makeup look 7" },
+        { "id": 21, "filename": "akad_08.jpg", "alt": "Party makeup look 8" },
+        { "id": 22, "filename": "akad_09.jpg", "alt": "Party makeup look 9" },
+        { "id": 23, "filename": "akad_10.jpg", "alt": "Party makeup look 10" },
+        { "id": 24, "filename": "akad_11.jpg", "alt": "Party makeup look 11" },
+        { "id": 25, "filename": "akad_12.jpg", "alt": "Party makeup look 12" },
+        { "id": 26, "filename": "akad_13.jpg", "alt": "Party makeup look 13" },
+        { "id": 27, "filename": "akad_14.jpg", "alt": "Party makeup look 14" },
+        { "id": 28, "filename": "akad_15.jpg", "alt": "Party makeup look 15" }
+      ]
+    },
+    "natural": {
+      "name": "Natural",
+      "description": "Natural and daily makeup looks",
+      "folder": "photo_grid",
+      "prefix": "bella",
+      "photos": [
+        { "id": 29, "filename": "bella_01.jpg", "alt": "Natural makeup look 1" },
+        { "id": 30, "filename": "bella_02.jpg", "alt": "Natural makeup look 2" },
+        { "id": 31, "filename": "bella_03.jpg", "alt": "Natural makeup look 3" },
+        { "id": 32, "filename": "bella_04.jpg", "alt": "Natural makeup look 4" },
+        { "id": 33, "filename": "bella_05.jpg", "alt": "Natural makeup look 5" },
+        { "id": 34, "filename": "bella_06.jpg", "alt": "Natural makeup look 6" },
+        { "id": 35, "filename": "bella_07.jpg", "alt": "Natural makeup look 7" },
+        { "id": 36, "filename": "bella_08.jpg", "alt": "Natural makeup look 8" },
+        { "id": 37, "filename": "bella_09.jpg", "alt": "Natural makeup look 9" }
+      ]
+    }
+  },
+  "gridPatterns": [
+    "grid-item-large",
+    "grid-item-medium",
+    "grid-item-tall",
+    "grid-item-wide",
+    "grid-item-small",
+    "grid-item-medium"
+  ]
+}

@@ -5,6 +5,42 @@ import Header from '@/app/baganWeb/Header';
 import Footer from '@/app/baganWeb/Footer';
 import './PortfolioGrid.css';
 
+// Portfolio data inline
+const portfolioData = {
+  categories: {
+    bridal: {
+      name: "Bridal",
+      folder: "akadTanpaSiger",
+      photos: Array.from({ length: 13 }, (_, i) => ({
+        id: i + 1,
+        filename: `akadTanpaSiger_${String(i + 1).padStart(2, '0')}.jpg`,
+        alt: `Bridal makeup look ${i + 1}`
+      }))
+    },
+    party: {
+      name: "Party",
+      folder: "makeUP-akad",
+      photos: Array.from({ length: 15 }, (_, i) => ({
+        id: i + 14,
+        filename: `akad_${String(i + 1).padStart(2, '0')}.jpg`,
+        alt: `Party makeup look ${i + 1}`
+      }))
+    },
+    natural: {
+      name: "Natural",
+      folder: "photo_grid",
+      photos: Array.from({ length: 9 }, (_, i) => ({
+        id: i + 29,
+        filename: `bella_${String(i + 1).padStart(2, '0')}.jpg`,
+        alt: `Natural makeup look ${i + 1}`
+      }))
+    }
+  },
+  gridPatterns: [
+    'grid-item-tall',
+  ]
+};
+
 export default function PortfolioGridPage() {
   const [activeFilter, setActiveFilter] = useState('all');
 
@@ -15,38 +51,19 @@ export default function PortfolioGridPage() {
     }
   }
 
-  // Konfigurasi folder dan kategori
-  const photoCategories = {
-    bridal: {
-      folder: 'akadTanpaSiger',
-      prefix: 'akadTanpaSiger',
-      count: 13
-    },
-    party: {
-      folder: 'makeUP-akad',
-      prefix: 'akad',
-      count: 15
-    },
-    natural: {
-      folder: 'photo_grid',
-      prefix: 'bella',
-      count: 9
-    }
-  };
-
-  // Generate array foto secara dinamis
+  // Generate photos array dari JSON
   const generatePhotos = () => {
     const photos = [];
-    let id = 1;
-
-    Object.entries(photoCategories).forEach(([category, config]) => {
-      for (let i = 1; i <= config.count; i++) {
+    
+    Object.entries(portfolioData.categories).forEach(([categoryKey, categoryData]) => {
+      categoryData.photos.forEach(photo => {
         photos.push({
-          id: id++,
-          src: `/assets/${config.folder}/${config.prefix}_${String(i).padStart(2, '0')}.jpg`,
-          category
+          id: photo.id,
+          src: `/assets/${categoryData.folder}/${photo.filename}`,
+          category: categoryKey,
+          alt: photo.alt
         });
-      }
+      });
     });
 
     return photos;
@@ -59,17 +76,13 @@ export default function PortfolioGridPage() {
     ? photos 
     : photos.filter(photo => photo.category === activeFilter);
 
-  // Layout grid pattern (berulang untuk semua foto)
-  const gridPattern = [
-    'grid-item-tall',
-  ];
-
-  // Filter buttons config
+  // Filter buttons dari JSON
   const filterButtons = [
     { id: 'all', label: 'All' },
-    { id: 'bridal', label: 'Bridal' },
-    { id: 'party', label: 'Party' },
-    { id: 'natural', label: 'Natural' }
+    ...Object.entries(portfolioData.categories).map(([key, data]) => ({
+      id: key,
+      label: data.name
+    }))
   ];
 
   return (
@@ -96,7 +109,7 @@ export default function PortfolioGridPage() {
 
         <div className="photo-grid">
           {filteredPhotos.map((photo, index) => {
-            const positionClass = gridPattern[index % gridPattern.length];
+            const positionClass = portfolioData.gridPatterns[index % portfolioData.gridPatterns.length];
             return (
               <div 
                 key={photo.id} 
@@ -104,7 +117,7 @@ export default function PortfolioGridPage() {
               >
                 <img 
                   src={photo.src} 
-                  alt={`Portfolio ${photo.category} ${photo.id}`}
+                  alt={photo.alt}
                   className="grid-image"
                   loading="lazy"
                 />
