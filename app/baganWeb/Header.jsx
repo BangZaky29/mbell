@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import PropTypes from "prop-types"
@@ -9,6 +10,8 @@ import "@/css/Header.css"
 export default function Header({ scrollToSection }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +22,26 @@ export default function Header({ scrollToSection }) {
   }, [])
 
   const handleMenuClick = (id) => {
-    scrollToSection(id)
+    // Cek apakah sedang di halaman utama
+    if (pathname === '/') {
+      // Jika di halaman utama, scroll ke section
+      scrollToSection(id)
+    } else {
+      // Jika di halaman lain, navigate ke home dulu baru scroll
+      router.push('/')
+      setTimeout(() => {
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    }
+    setMobileMenuOpen(false)
+  }
+
+  const handleHomeClick = () => {
+    // Navigate ke halaman utama
+    router.push('/')
     setMobileMenuOpen(false)
   }
 
@@ -27,7 +49,7 @@ export default function Header({ scrollToSection }) {
     <nav className={`header ${scrolled ? "header-scrolled" : ""}`}>
       <div className="header-container">
         <div className="header-content">
-          <div className="header-logo">
+          <div className="header-logo" onClick={handleHomeClick} style={{ cursor: 'pointer' }}>
             <Image
               src="/assets/logoBrand.png"
               alt="MBELL"
@@ -39,19 +61,19 @@ export default function Header({ scrollToSection }) {
           </div>
 
           <div className="header-menu-desktop">
-            <button onClick={() => scrollToSection("home")} className="header-menu-item">
+            <button onClick={handleHomeClick} className="header-menu-item">
               Home
             </button>
-            <button onClick={() => scrollToSection("about")} className="header-menu-item">
+            <button onClick={() => handleMenuClick("about")} className="header-menu-item">
               About
             </button>
-            <button onClick={() => scrollToSection("services")} className="header-menu-item">
+            <button onClick={() => handleMenuClick("services")} className="header-menu-item">
               Services
             </button>
-            <button onClick={() => scrollToSection("portfolio")} className="header-menu-item">
+            <button onClick={() => handleMenuClick("portfolio")} className="header-menu-item">
               Portfolio
             </button>
-            <button onClick={() => scrollToSection("contact")} className="header-menu-item">
+            <button onClick={() => handleMenuClick("contact")} className="header-menu-item">
               Contact
             </button>
           </div>
@@ -65,7 +87,7 @@ export default function Header({ scrollToSection }) {
       {mobileMenuOpen && (
         <div className="header-menu-mobile">
           <div className="header-menu-mobile-content">
-            <button onClick={() => handleMenuClick("home")} className="header-menu-mobile-item">
+            <button onClick={handleHomeClick} className="header-menu-mobile-item">
               Home
             </button>
             <button onClick={() => handleMenuClick("about")} className="header-menu-mobile-item">

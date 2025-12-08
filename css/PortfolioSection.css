@@ -112,3 +112,15 @@
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
 }
+
+.portfolio-seemore-btn {
+  margin-top: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: hsl(var(--foreground));
+}
+
+.portfolio-seemore-btn:hover {
+  background-color: hsl(var(--accent) / 0.8);
+}

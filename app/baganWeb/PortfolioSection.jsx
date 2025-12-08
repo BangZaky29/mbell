@@ -1,11 +1,13 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import "@/css/PortfolioSection.css"
 
 export default function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState("all")
+  const router = useRouter()
 
   const portfolioItems = [
     { id: 1, category: "bridal", image: "/assets/photo_grid/bella_01.jpg" },
@@ -51,6 +53,16 @@ export default function PortfolioSection() {
               <div className="portfolio-overlay" />
             </div>
           ))}
+        </div>
+        
+        <div className="portfolio-seemore-container">
+          <Button
+            onClick={() => router.push('/baganWeb/portfolioGrid')}
+            variant="default"
+            className="portfolio-seemore-btn"
+          >
+            see more portfolio..
+          </Button>
         </div>
       </div>
     </section>
