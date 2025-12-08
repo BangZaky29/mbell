@@ -3,27 +3,25 @@
 import { useState } from "react";
 
 export default function PortfolioGridClient({ data }) {
-  const [activeFilter, setActiveFilter] = useState("all");
 
-  const allPhotos = Object.entries(data.categories).flatMap(([key, cat]) =>
-    cat.photos.map((photo) => ({
-      ...photo,
-      category: key,
-    }))
-  );
+  const categoryKeys = Object.keys(data.categories);
+    const [activeFilter, setActiveFilter] = useState("all");
 
-  const filteredPhotos =
-    activeFilter === "all"
-      ? allPhotos
-      : allPhotos.filter((p) => p.category === activeFilter);
 
-  const filterButtons = [
-    { id: "all", label: "All" },
-    ...Object.entries(data.categories).map(([key, cat]) => ({
-      id: key,
-      label: cat.name,
-    })),
-  ];
+  // hanya foto dari folder aktif
+  const filteredPhotos = data.categories[activeFilter].photos;
+
+  // Pastikan ALL muncul pertama
+    const orderedCategories = [
+    ["all", data.categories["all"]],
+    ...Object.entries(data.categories).filter(([key]) => key !== "all")
+    ];
+
+    const filterButtons = orderedCategories.map(([key, cat]) => ({
+    id: key,
+    label: cat.name,
+    }));
+
 
   return (
     <div className="portfolio-container">
@@ -37,9 +35,7 @@ export default function PortfolioGridClient({ data }) {
         {filterButtons.map((btn) => (
           <button
             key={btn.id}
-            className={`filter-btn ${
-              activeFilter === btn.id ? "active" : ""
-            }`}
+            className={`filter-btn ${activeFilter === btn.id ? "active" : ""}`}
             onClick={() => setActiveFilter(btn.id)}
           >
             {btn.label}
@@ -49,8 +45,7 @@ export default function PortfolioGridClient({ data }) {
 
       <div className="photo-grid">
         {filteredPhotos.map((photo, index) => {
-          const pattern =
-            data.gridPatterns[index % data.gridPatterns.length];
+          const pattern = data.gridPatterns[index % data.gridPatterns.length];
 
           return (
             <div key={photo.id} className={`grid-item ${pattern}`}>
@@ -62,7 +57,7 @@ export default function PortfolioGridClient({ data }) {
               />
 
               <div className="image-overlay">
-                <span className="overlay-text">{photo.category}</span>
+                <span className="overlay-text">{activeFilter}</span>
               </div>
             </div>
           );

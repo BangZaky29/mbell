@@ -1,19 +1,18 @@
+import Header from '@/app/baganWeb/Header';
+import Footer from '@/app/baganWeb/Footer';
+import PortfolioGridClient from './portfolioClient';
 import { loadPortfolioData } from "./portfolioData";
-import PortfolioGridClient from "./portfolioClient";
-import Header from "@/app/baganWeb/Header";
-import Footer from "@/app/baganWeb/Footer";
-import "./PortfolioGrid.css";
+import "./PortfolioGrid.css";  // ← cara yang benar
+
 
 export default function Page() {
-  const portfolioData = loadPortfolioData(); // server-side
+  const portfolioData = loadPortfolioData(); // ← SERVER SIDE
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Header />
-
       <PortfolioGridClient data={portfolioData} />
-
       <Footer />
-    </div>
+    </>
   );
 }

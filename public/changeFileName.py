@@ -1,7 +1,7 @@
 import os
 
 # Path folder target
-folder_path = r"C:\portofolio-website\mbell\public\assets\preWedding"
+folder_path = r"C:\portofolio-website\mbell\public\assets\siraman"
 
 # Ambil semua file dalam folder
 files = os.listdir(folder_path)
@@ -18,7 +18,7 @@ for idx, filename in enumerate(image_files, start=1):
     ext = os.path.splitext(filename)[1]
     
     # Nama baru dengan format akad_01, akad_02, dst.
-    new_name = f"preWedding_{idx:02d}{ext}"
+    new_name = f"siraman_{idx:02d}{ext}"
     
     # Path lama dan baru
     old_path = os.path.join(folder_path, filename)

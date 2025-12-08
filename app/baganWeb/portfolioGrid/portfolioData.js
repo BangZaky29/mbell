@@ -1,39 +1,62 @@
 import { getImages } from "./getImages";
 
 export function loadPortfolioData() {
-  return {
-    categories: {
-      "akad tanpa siger": {
-        name: "Akad Tanpa Siger",
-        folder: "akadTanpaSiger",
-        photos: getImages("akadTanpaSiger"),
-      },
-      Akad: {
-        name: "Akad",
-        folder: "makeUP-akad",
-        photos: getImages("makeUP-akad"),
-      },
-      natural: {
-        name: "Natural",
-        folder: "photo_grid",
-        photos: getImages("photo_grid"),
-      },
-      Pesta: {
-        name: "Pesta",
-        folder: "pesta",
-        photos: getImages("pesta"),
-      },
-      Wisuda: {
-        name: "Wisuda",
-        folder: "wisuda",
-        photos: getImages("wisuda"),
-      },
-      "Pre Wedding": {
-        name: "Pre Wedding",
-        folder: "preWedding",
-        photos: getImages("preWedding"),
-      },
+  const categories = {
+    "akad tanpa siger": {
+      name: "Akad Tanpa Siger",
+      folder: "akadTanpaSiger",
+      photos: getImages("akadTanpaSiger"),
     },
+    Akad: {
+      name: "Akad",
+      folder: "makeUP-akad",
+      photos: getImages("makeUP-akad"),
+    },
+    natural: {
+      name: "Natural",
+      folder: "photo_grid",
+      photos: getImages("photo_grid"),
+    },
+    Pesta: {
+      name: "Pesta",
+      folder: "pesta",
+      photos: getImages("pesta"),
+    },
+    Wisuda: {
+      name: "Wisuda",
+      folder: "wisuda",
+      photos: getImages("wisuda"),
+    },
+    "Pre Wedding": {
+      name: "Pre Wedding",
+      folder: "preWedding",
+      photos: getImages("preWedding"),
+    },
+    Siraman: {
+      name: "Siraman",
+      folder: "siraman",
+      photos: getImages("siraman"),
+    },
+    lamaran: {
+      name: "Lamaran",
+      folder: "lamaran",
+      photos: getImages("lamaran"),
+    },
+    bridesmaid: {
+      name: "Bridesmaid",
+      folder: "bridesmaid",
+      photos: getImages("bridesmaid"),
+    },
+  };
+
+  // KATEGORI ALL
+  categories["all"] = {
+    name: "All",
+    photos: Object.values(categories).flatMap((cat) => cat.photos),
+  };
+
+  return {
+    categories,
     gridPatterns: ["grid-item-tall"],
   };
 }
