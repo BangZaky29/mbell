@@ -19,7 +19,7 @@ export default function PortfolioSection() {
   { id: 6, category: "akad tanpa siger", image: "/assets/akadTanpaSiger/akadTanpaSiger_12.jpg" },
 
   // === Bridesmaid ===
-  { id: 6, category: "bridesmaid", image: "/assets/Bridesmaid/Bridesmaid_01.jpg" },
+  { id: 6, category: "bridesmaid", image: "/assets/Bridesmaid/Bridesmaid_06.jpg" },
   { id: 7, category: "bridesmaid", image: "/assets/Bridesmaid/Bridesmaid_02.jpg" },
   { id: 8, category: "bridesmaid", image: "/assets/Bridesmaid/Bridesmaid_03.jpg" },
   { id: 9, category: "bridesmaid", image: "/assets/Bridesmaid/Bridesmaid_04.jpg" },
@@ -44,9 +44,9 @@ export default function PortfolioSection() {
   { id: 22, category: "pesta", image: "/assets/pesta/pesta_08.jpg" },
 
   // === Natural (ambil dari photo_grid) ===
-  { id: 23, category: "natural", image: "/assets/photo_grid/bella_01.jpg" },
-  { id: 24, category: "natural", image: "/assets/photo_grid/bella_06.jpg" },
-  { id: 25, category: "natural", image: "/assets/photo_grid/bella_07.jpg" },
+  { id: 23, category: "beauty Shoot", image: "/assets/photo_grid/bella_01.jpg" },
+  { id: 24, category: "beauty Shoot", image: "/assets/photo_grid/bella_06.jpg" },
+  { id: 25, category: "beauty Shoot", image: "/assets/photo_grid/bella_07.jpg" },
 
   // === Pre Wedding ===
   { id: 26, category: "pre wedding", image: "/assets/preWedding/preWedding_01.jpg" },
@@ -57,14 +57,22 @@ export default function PortfolioSection() {
   // === Siraman ===
   { id: 30, category: "siraman", image: "/assets/siraman/siraman_01.jpg" },
   { id: 31, category: "siraman", image: "/assets/siraman/siraman_02.jpg" },
-  { id: 32, category: "siraman", image: "/assets/siraman/siraman_03.jpg" },
-  { id: 33, category: "siraman", image: "/assets/siraman/siraman_04.jpg" },
 
   // === Wisuda ===
   { id: 34, category: "wisuda", image: "/assets/wisuda/wisuda_01.jpg" },
   { id: 35, category: "wisuda", image: "/assets/wisuda/wisuda_02.jpg" },
   { id: 36, category: "wisuda", image: "/assets/wisuda/wisuda_03.jpg" },
   { id: 37, category: "wisuda", image: "/assets/wisuda/wisuda_04.jpg" },
+
+  // === kelas-makeup ===
+  { id: 38, category: "kelas makeup", image: "/assets/kelas_makeup/kelas_makeup_01.jpg" },
+  { id: 39, category: "kelas makeup", image: "/assets/kelas_makeup/kelas_makeup_02.jpg" },
+  { id: 40, category: "kelas makeup", image: "/assets/kelas_makeup/kelas_makeup_03.jpg" },
+
+  // === makeup tari ===
+  { id: 41, category: "makeup tari", image: "/assets/makeup-tari/makeup-tari_01.jpg" },
+  { id: 42, category: "makeup tari", image: "/assets/makeup-tari/makeup-tari_02.jpg" },
+  { id: 43, category: "makeup tari", image: "/assets/makeup-tari/makeup-tari_03.jpg" },
 ];
 
 
@@ -83,13 +91,15 @@ export default function PortfolioSection() {
             {[
               "akad tanpa siger",
               "akad",
-              "natural",
+              "beauty Shoot",
               "pesta",
               "wisuda",
               "pre wedding",
               "siraman",
               "lamaran",
               "bridesmaid",
+              "kelas makeup",
+              "makeup tari",
             ].map((filter) => (
               <Button
                 key={filter}

@@ -5,23 +5,17 @@ import { useState } from "react";
 export default function PortfolioGridClient({ data }) {
 
   const categoryKeys = Object.keys(data.categories);
-    const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState(categoryKeys[0]); // default kategori pertama
 
-
-  // hanya foto dari folder aktif
   const filteredPhotos = data.categories[activeFilter].photos;
 
-  // Pastikan ALL muncul pertama
-    const orderedCategories = [
-    ["all", data.categories["all"]],
-    ...Object.entries(data.categories).filter(([key]) => key !== "all")
-    ];
+  // kategori tanpa ALL
+  const orderedCategories = Object.entries(data.categories);
 
-    const filterButtons = orderedCategories.map(([key, cat]) => ({
+  const filterButtons = orderedCategories.map(([key, cat]) => ({
     id: key,
     label: cat.name,
-    }));
-
+  }));
 
   return (
     <div className="portfolio-container">

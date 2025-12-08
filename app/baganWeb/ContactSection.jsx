@@ -16,6 +16,7 @@ export default function ContactSection({ handleWhatsApp }) {
     email: "",
     service: "",
     reservationDate: "",
+    address: "",
     message: ""
   })
 
@@ -25,7 +26,11 @@ export default function ContactSection({ handleWhatsApp }) {
     "Makeup Wisuda",
     "Makeup Photoshoot",
     "Acara Spesial",
-    "Kelas Makeup"
+    "Kelas Makeup",
+    "Bridesmaid",
+    "Makeup Tari",
+    "Makeup Prewedding",
+    "Makeup Engagement"
   ]
 
   const handleInputChange = (e) => {
@@ -64,6 +69,7 @@ export default function ContactSection({ handleWhatsApp }) {
 *Email:* ${formData.email || '-'}
 *Service Interested:* ${formData.service || '-'}
 *Reservation Date:* ${formatDate(formData.reservationDate)}
+*Address:* ${formData.address || '-'}
 
 *Message:*
 ${formData.message || '-'}`
@@ -76,6 +82,7 @@ ${formData.message || '-'}`
       email: "",
       service: "",
       reservationDate: "",
+      address: "",
       message: ""
     })
   }
@@ -145,7 +152,7 @@ ${formData.message || '-'}`
               </Select>
             </div>
 
-            {/* Reservation Date - NEW */}
+            {/* Reservation Date */}
             <div className="contact-form-field">
               <label className="contact-label">Reservation Date</label>
               <div className="relative">
@@ -161,6 +168,20 @@ ${formData.message || '-'}`
               </div>
             </div>
 
+            {/* Address */}
+            <div className="contact-form-field">
+              <label className="contact-label">Address</label>
+              <Textarea 
+                name="address"
+                placeholder="Enter your complete address..." 
+                className="contact-textarea"
+                value={formData.address}
+                onChange={handleInputChange}
+                rows={3}
+              />
+            </div>
+
+            {/* Message */}
             <div className="contact-form-field">
               <label className="contact-label">Message</label>
               <Textarea 

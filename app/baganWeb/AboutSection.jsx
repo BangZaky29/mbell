@@ -44,7 +44,7 @@ export default function AboutSection() {
               >
                 <Button variant="outline" size="lg">
                   <Instagram className="w-5 h-5 mr-2" />
-                  Follow @mbell.makeup
+                  Follow @mbell.makeup_
                 </Button>
               </a>
             </div>

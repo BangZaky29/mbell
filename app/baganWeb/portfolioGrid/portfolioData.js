@@ -12,8 +12,8 @@ export function loadPortfolioData() {
       folder: "makeUP-akad",
       photos: getImages("makeUP-akad"),
     },
-    natural: {
-      name: "Natural",
+    "beauty Shoot": {
+      name: "Beauty Shoot",
       folder: "photo_grid",
       photos: getImages("photo_grid"),
     },
@@ -47,12 +47,16 @@ export function loadPortfolioData() {
       folder: "bridesmaid",
       photos: getImages("bridesmaid"),
     },
-  };
-
-  // KATEGORI ALL
-  categories["all"] = {
-    name: "All",
-    photos: Object.values(categories).flatMap((cat) => cat.photos),
+    "kelas makeup": {
+      name: "Kelas Makeup",
+      folder: "kelas-makeup",
+      photos: getImages("kelas_makeup"),
+    },
+    "makeup tari": {
+      name: "Makeup Tari",
+      folder: "makeup-tari",
+      photos: getImages("makeup-tari"),
+    },
   };
 
   return {
